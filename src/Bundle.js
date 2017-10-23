@@ -235,6 +235,7 @@ export default class Bundle {
 		keys( this.scope.variables ).forEach( name => used[ name ] = 1 );
 
 		function getSafeName ( name ) {
+      name += '__$$'; //todeconflict everything
 			while ( used[ name ] ) {
 				name += `$${used[ name ]++}`;
 			}
